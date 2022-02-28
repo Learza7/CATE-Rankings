@@ -23,7 +23,7 @@
 
 	let tableau = document.getElementById("tableau");
 
-	let players = ['26094851', '651097982','551004240', '651077493','26060728','26004518','45141274','35016121','661643','24558869','36003174','26004402','34177563','4663640','45117721','45104840','36085243','551004020','551003970','668761'];
+	let players = ['26094851', '651097982','551004240', ,'26060728','26004518','45141274','35016121','661643','24558869','36003174','26004402','34177563','4663640','45117721','45104840','36085243','551004020','551003970','668761'];
 
 	for (let i in players){
 		
@@ -120,7 +120,8 @@ function sortTable(s) {
 	h1{
 		font-family: 'Smooch Sans', sans-serif;
 		font-size : 4em;
-		text-shadow: 3px 3px 5px black
+		text-shadow: 3px 3px 5px black;
+
 	}
 	.vert{
 		color : green;
@@ -139,12 +140,13 @@ function sortTable(s) {
 	table {margin-left: auto;
  		margin-right: auto;
   border-collapse: collapse;
-  border-radius: 1em;
+  border-radius: 0.6em;
   overflow: hidden;
   text-align : left;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
 }
  td ,th{
-  padding: 1em;
+  padding: 0.7em 1em;
  	
   border-bottom: 2px solid #a1a1a1; 
 }
@@ -159,7 +161,7 @@ tr:last-of-type{
 		border-bottom: 5px solid #a1a1a1;
 	}
 thead tr{
-	background-color: #2581a8;
+	background-color: #075487;
     color: #ffffff;
     text-align: left;
 }
