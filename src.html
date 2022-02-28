@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 id="h1">CATE RANKINGS</h1>
+<p>Work in Progress</p>
+<table id = 'tableau' class = "sortable">
+      <tr>
+        <th>Nom</th>
+        <th>Lent</td>
+        <th>Rapide</th>
+        <th>Blitz</th>
+      </tr>
+</table>
+<button type="button" onclick="sortTable(1)">SortByElo</button>
+<button type="button" onclick="sortTable(0)">SortByName</button>
+</body>
+</html>
+<script type="text/javascript">
+
+	let tableau = document.getElementById("tableau");
+
+	let players = ['26094851', '651097982','551004240', '651077493','26060728','26004518','45141274','35016121','661643','24558869','36003174','26004402','34177563','4663640','45117721','45104840','36085243','551004020','551003970','668761'];
+
+	for (let i in players){
+		
+		fetch('https://fide-ratings-scraper.herokuapp.com/player/'+players[i]+'/info?include_history=true')
+	  		.then(function(res) {
+	    		if (res.ok) {
+	      			return res.json();
+	    		}
+	  		})
+	  		.then(function(value) {
+	   
+	    		infos = [value.name, value.standard_elo, value.rapid_elo, value.blitz_elo];
+	    		
+	    		
+	    		let older = value.history[1];
+	    		let variation = [0, value.standard_elo - older.standard, value.rapid_elo - older.rapid, value.blitz_elo - older.bliz];
+	    		
+
+
+	    		let row = document.createElement("tr");
+	    		
+	    		for (let i = 0; i<4; i++){
+	    			let sq = document.createElement("td");
+	    			sq.innerHTML = infos[i];
+
+	    			if (variation[i] != 0 && !isNaN(variation[i])){
+	    				if (variation[i]>0){
+	    					sq.innerHTML += ' <em class="vert">(+'+variation[i]+')</em>';
+	    				}
+	    				else{
+	    					sq.innerHTML += ' <em class ="rouge">('+variation[i]+')</em>';
+	    				}
+	    			}
+
+	    			row.appendChild(sq);
+	    		}
+	    		tableau.appendChild(row);
+	    		
+	 		 })
+	  		.catch(function(err) {
+	  		  // Une erreur est survenue
+	  		});
+
+	  	}
+
+
+
+function sortTable(s) {
+
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("tableau");
+  switching = true;
+  /* Make a loop that will continue until
+  no switching has been done: */
+  while (switching) {
+    // Start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /* Loop through all table rows (except the
+    first, which contains table headers): */
+    for (i = 1; i < (rows.length - 1); i++) {
+      // Start by saying there should be no switching:
+      shouldSwitch = false;
+      /* Get the two elements you want to compare,
+      one from current row and one from the next: */
+      x = rows[i].getElementsByTagName("td")[s];
+      y = rows[i + 1].getElementsByTagName("td")[s];
+      
+      // Check if the two rows should switch place:
+      if (s==0 && x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase() || s==1 && x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+        // If so, mark as a switch and break the loop:
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /* If a switch has been marked, make the switch
+      and mark that a switch has been done: */
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+
+	  	
+</script>
+<style>
+	.vert{
+		color : green;
+	}
+	.rouge{
+		color: red;
+	}
