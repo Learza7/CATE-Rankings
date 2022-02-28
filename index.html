@@ -54,10 +54,10 @@
 
 	    			if (variation[i] != 0 && !isNaN(variation[i])){
 	    				if (variation[i]>0){
-	    					sq.innerHTML += ' <em class="vert">(+'+variation[i]+')</em>';
+	    					sq.innerHTML += ' <i class="vert">(+'+variation[i]+')</i>';
 	    				}
 	    				else{
-	    					sq.innerHTML += ' <em class ="rouge">('+variation[i]+')</em>';
+	    					sq.innerHTML += ' <i class ="rouge">('+variation[i]+')</i>';
 	    				}
 	    			}
 
@@ -116,6 +116,7 @@ function sortTable(s) {
 	@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Smooch+Sans:wght@600&display=swap');
 	h1{
 		font-family: 'Smooch Sans', sans-serif;
+		font-size : 4em;
 	}
 	.vert{
 		color : green;
@@ -126,5 +127,11 @@ function sortTable(s) {
 
 	body{
 		font-family: 'Roboto', sans-serif;
+		font-size: 1em;
+		text-align : center;
+	}
+	table{
+		margin-left: auto;
+ 		margin-right: auto;
 	}
 </style>
