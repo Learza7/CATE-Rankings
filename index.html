@@ -3,17 +3,19 @@
 <body>
 
 <h1 id="h1">CATE RANKINGS</h1>
-<p>Work in Progress</p>
+<button type="button" onclick="sortTable(1)">SortByElo</button>
+<button type="button" onclick="sortTable(0)">SortByName</button>
 <table id = 'tableau'>
-      <tr>
+      <thead>
+      	<tr>
         <th>Nom</th>
         <th>Lent</td>
         <th>Rapide</th>
         <th>Blitz</th>
-      </tr>
+    </tr>
+      </thead>
 </table>
-<button type="button" onclick="sortTable(1)">SortByElo</button>
-<button type="button" onclick="sortTable(0)">SortByName</button>
+
 </body>
 </html>
 <script type="text/javascript">
@@ -117,6 +119,7 @@ function sortTable(s) {
 	h1{
 		font-family: 'Smooch Sans', sans-serif;
 		font-size : 4em;
+		text-shadow: 3px 3px 5px black
 	}
 	.vert{
 		color : green;
@@ -124,14 +127,42 @@ function sortTable(s) {
 	.rouge{
 		color: red;
 	}
+	
 
 	body{
 		font-family: 'Roboto', sans-serif;
 		font-size: 1em;
 		text-align : center;
 	}
-	table{
-		margin-left: auto;
+	
+	table {margin-left: auto;
  		margin-right: auto;
+  border-collapse: collapse;
+  border-radius: 1em;
+  overflow: hidden;
+  text-align : left;
+}
+ td ,th{
+  padding: 1em;
+ 	
+  border-bottom: 2px solid #a1a1a1; 
+}
+tr{
+	
+	background : #ddd; 
+}
+tr:nth-of-type(even){
+	background: #fff; 
+}
+tr:last-of-type{
+		border-bottom: 5px solid #a1a1a1;
 	}
+thead tr{
+	background-color: #2581a8;
+    color: #ffffff;
+    text-align: left;
+}
+button{
+	margin-bottom : 1em;
+}
 </style>
