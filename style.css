@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Smooch+Sans:wght@800&display=swap');
+
+body{
+	font-family: 'Roboto', sans-serif;
+	font-size: 1em;
+}
+
+
+h1{
+	font-family: 'Smooch Sans', sans-serif;
+	font-size: 4em;
+	text-shadow: 3px 3px 2px black;
+	text-align: center;
+}
+
+#table{
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+	border-radius: 0.6em;
+	overflow: hidden;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+}
+
+#table td, th{
+	padding: 0.6em 1em;
+	border-bottom: 2px solid #a1a1a1;
+}
+
+#table tr{
+	background: #d7d7d7;
+}
+#table tr:nth-of-type(even){
+	background: #fff;
+}
+#table tr:last-of-type{
+		border-bottom: 5px solid #a1a1a1;
+	}
+#table thead tr{
+	background-color: #075487;
+    color: #ffffff;
+    text-align: left;
+  
+}
+
+#btns{
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.positive_variation{
+	color: green;
+}
+.negative_variation{
+	color: red;
+}
