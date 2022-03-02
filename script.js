@@ -76,7 +76,7 @@ totems = {
 
 
 // get the json data
-fetch("https://api.jsonbin.io/b/621e972a06182767436aa7f3/13")
+fetch("https://api.jsonbin.io/b/621e972a06182767436aa7f3/14")
 	.then(res => res.json())
 	.then(function(data){
 		for (let i in data.members){
@@ -100,7 +100,7 @@ function addMemberRow(member){
 	    	}
 	  	})
 	  	.then(function(value) {
-	  		console.log(value);
+	  		
 	  		elos = [value.standard_elo, value.rapid_elo, value.blitz_elo];
 	  		
 	  		if (value.history.length > 1){
@@ -127,12 +127,20 @@ function addMemberRow(member){
 	  			if (elos[i] != "Notrated"){
 	  				cell.innerHTML = elos[i];
 
-	  				if(!isNaN(variations[i])){
+	  				if(!isNaN(variations[i] && variations[i]!= 0)){
 	  					if (variations[i] > 0){
 	  						cell.innerHTML += ' <i class="positive_variation">(+'+variations[i]+')</i>';
 	  					}
 	  					else if (variations[i] < 0){
 	  						cell.innerHTML += ' <i class="negative_variation">('+variations[i]+')</i>';
+	  					}
+
+	  					cell.onclick = function(){
+	  						
+	  						let str = value.history[0].numeric_date+"";
+	  						
+	  						let date = str.substring(0,4)+"-"+str.substring(4,6)+"-01";
+	  						window.open("https://ratings.fide.com/calculations.phtml?id_number="+member.FIDE_ID+"&period="+date+"&rating="+i, "_blank");
 	  					}
 	  				}
 
