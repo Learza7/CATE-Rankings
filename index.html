@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<title>CATE RANKINGS</title>
+		<link rel="stylesheet" href="style.css">
+		
+
+	</head>
+
+	<header>
+		<h1>CATE RANKINGS</h1>
+	</header>
+
+	<body>
+
+		<div id="ProfileModal" class="modal">
+
+		 	<div class="modal-content">
+		   	<div class="modal-header">
+		      	<span id="ProfileCross" class="close">&times;</span>
+		      	<div id="ProfileName">Nom</div>
+		      	<div id="flag"></div>
+		      	<div id="totem"></div>
+		      	
+		   	</div>
+		    <div class="modal-body">
+		      <p id="age">Age</p>
+		      <p id="birthdate">Anniversaire</p>
+		      <p id ="rank">Rang</p>
+		    </div>
+			</div>
+		</div>
+		<div id=btns>
+			<button type="button" onclick="sortByElo()">SortByElo</button>
+			<button type="button" onclick="sortByName()">SortByName</button>
+		</div>
+		<table id=table>
+			<thead>
+				<tr>
+					<th>Nom</th>
+					<th>Lent</th>
+					<th>Rapide</th>
+					<th>Blitz</th>
+				</tr>
+			</thead>
+			<tbody id=booty>
+			</tbody>
+		</table>
+	</body>
+</html>
+<script src="script.js"></script>
+
+
+
