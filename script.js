@@ -54,7 +54,8 @@ totems = {
 	"ogre": "👹",
 	"devil": "😈",
 	"angel": "😇",
-	"lobster": "🦞"}
+	"lobster": "🦞",
+	"lynx": "😾"}
 
 
 
