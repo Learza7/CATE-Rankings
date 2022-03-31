@@ -241,6 +241,56 @@ function sortByName() {
   }
 }
 
+function sortByEloChange() {
+
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("table");
+  switching = true;
+ 
+  while (switching) {
+   
+    switching = false;
+    rows = table.rows;
+    
+    for (i = 1; i < (rows.length - 1); i++) {
+   
+      shouldSwitch = false;
+  
+      x = rows[i].getElementsByTagName("td")[1].getElementsByTagName("i");
+      if (x.length>0){
+      	x = x[0].innerHTML.replaceAll("(","").replaceAll(")","");
+      }
+      else{
+      	x = "0";
+      }
+      console.log(parseInt(x));
+      y = rows[i+1].getElementsByTagName("td")[1].getElementsByTagName("i");
+      if (y.length>0){
+      	y = y[0].innerHTML.replaceAll("(","").replaceAll(")","");
+      }
+      else{
+      	y = "0";
+      }
+      console.log(y);
+
+    
+
+      if (parseInt(x) < parseInt(y) ) {
+       
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+    
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+
+
+
 function editProfile(member,fide_infos){
 
 	ProfileName.innerHTML = member.name;
