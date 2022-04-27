@@ -16,7 +16,7 @@ const addGame = game => {
 	cell1.innerText = game.body;
 	row.appendChild(cell1);
 	let cell2 = document.createElement("td");
-	cell2.innerHTML = "<a href=\""+game.link+"\">" + game.link + "</a>";
+	cell2.innerHTML = "<a href=\""+game.link+"\">" + "Lien" + "</a>";
 	row.appendChild(cell2);
 	let cell3 = document.createElement("td");
 	let day = new Date(game.date * 1000)
