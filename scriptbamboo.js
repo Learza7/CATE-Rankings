@@ -1,5 +1,5 @@
 let tbody = document.getElementById("booty");
-fetch("https://api.npoint.io/ab9c1354d56ac5b08fce")
+fetch("https://api.npoint.io/5b8ae12b953b9851b6a0")
 .then(res => res.json())
 .then(data => {
 
