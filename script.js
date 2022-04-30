@@ -76,7 +76,7 @@ totems = {
 
 
 // get the json data
-fetch("https://api.jsonbin.io/b/621e972a06182767436aa7f3/17")
+fetch("https://api.jsonbin.io/b/621e972a06182767436aa7f3/18")
 	.then(res => res.json())
 	.then(function(data){
 		for (let i in data.members){
