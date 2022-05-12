@@ -53,10 +53,15 @@ h1 {
 	text-align: center;
 }
 
+.btns {
+  font-family: 'Quicksand', sans-serif;
+  font-size: .9em;
+}
 
 #btns, #menu{
 	text-align: center;
 	margin-bottom: 1em;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .positive_variation{
