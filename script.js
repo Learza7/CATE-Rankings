@@ -225,7 +225,7 @@ function sortByEloChange() {
 			else{
 				x = "0";
 			}
-			console.log(parseInt(x));
+			
 			y = rows[i+1].getElementsByTagName("td")[1].getElementsByTagName("i");
 			if (y.length>0){
 				y = y[0].innerHTML.replaceAll("(","").replaceAll(")","");
@@ -233,7 +233,7 @@ function sortByEloChange() {
 			else{
 				y = "0";
 			}
-			console.log(y);
+			
 			
 			
 			
