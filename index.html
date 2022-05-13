@@ -1,62 +1,60 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta charset="UTF-8">
-		<title>CATE RANKINGS</title>
-		<link rel="stylesheet" href="style.css">
-		<link rel="icon" href="logo.png">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<title>CATE RANKINGS</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="logo.png">
+</head>
 
-	</head>
+<header>
+	<h1><img src="logo.png"><span>CATE RANKINGS</span></h1>
+</header>
 
-	<header>
-		<!-<img src="logo.png" id="logo">
-		<h1>CATE RANKINGS</h1>
-	</header>
+<body>
+	<!-- Modal for showing the individual cards -->
+	<div id="ProfileModal" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<span id="ProfileCross" class="close">&times;</span>
+				<div id="ProfileName">Nom</div>
+				<div id="flag"></div>
+				<div id="totem"></div>
+			</div>
 
-	<body>
-
-		<div id="ProfileModal" class="modal">
-
-		 	<div class="modal-content">
-		   	<div class="modal-header">
-		      	<span id="ProfileCross" class="close">&times;</span>
-		      	<div id="ProfileName">Nom</div>
-		      	<div id="flag"></div>
-		      	<div id="totem"></div>
-		      	
-		   	</div>
-		    <div class="modal-body">
-		      <p id="age">Age</p>
-		      <p id="birthdate">Anniversaire</p>
-		      <p id ="rank">Rang</p>
-		    </div>
+			<div class="modal-body">
+				<p id="age">Age</p>
+				<p id="birthdate">Anniversaire</p>
+				<p id ="rank">Rang</p>
 			</div>
 		</div>
-		<div id = menu>
-			
+	</div>
+
+	
+	<div id="buttons">
+		<div>
 			<form action="bamboo.html">
-				<button class="btns" id="goBamboo">Holy Bamboo Rules</button>
+				<button>Holy Bamboo Rules</button>
 			</form>
 		</div>
-		<div id=btns>
-			<button class="btns" type="button" onclick="sortByName()">SortByName</button>
-			<button class="btns" type="button" onclick="sortByElo()">SortByElo</button>
-			<button class="btns" type="button" onclick="sortByEloChange()">SortByEloChange</button>
-		</div>
-		<table id=table>
-			<thead>
-				<tr>
-					<th>Nom</th>
-					<th>Lent</th>
-					<th>Rapide</th>
-					<th>Blitz</th>
-				</tr>
-			</thead>
-			<tbody id=booty>
-			</tbody>
-		</table>
-	</body>
+		<button type="button" onclick="sortByName()">SortByName</button>
+		<button type="button" onclick="sortByElo()">SortByElo</button>
+		<button type="button" onclick="sortByEloChange()">SortByEloChange</button>
+	</div>
+	<table id="table">
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>Lent</th>
+				<th>Rapide</th>
+				<th>Blitz</th>
+			</tr>
+		</thead>
+		<tbody id="table_body">
+		</tbody>
+	</table>
+</body>
 </html>
 <script src="script.js"></script>
 

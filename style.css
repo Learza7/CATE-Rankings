@@ -1,75 +1,82 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@500&display=swap');
-body{
-	font-family: 'Quicksand', sans-serif;
-	font-size: 1em;
+
+
+img{
+  vertical-align: middle;
+  animation-name: rotate;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  filter: drop-shadow(4px 2px 3px grey);
 }
 
-.logo{
-  vertical-align: middle;
+@keyframes rotate{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(359deg);
+  }
 }
+
 h1 {
-	font-family: 'Fredoka One', sans-serif;
-	font-size: 4em;
-	text-shadow: 3px 2px 3px grey;
-	text-align: center;
-  color: #042a44;
-  
-  
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 4em;
+  text-shadow: 4px 2px 3px grey;
+  text-align: center;
+  color: #2f379e;
+  margin-bottom: 0;
+}
+
+body{
+  font-family: 'Quicksand', sans-serif;
+}
+
+#buttons{
+  text-align: center;
+}
+button{
+  margin-bottom: .8em;
+  font-family: 'Quicksand', sans-serif;
 }
 
 #table{
-	margin-left: auto;
-	margin-right: auto;
-	border-collapse: collapse;
-	border-radius: 0.6em;
-	overflow: hidden;
-	box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  border-radius: 0.6em;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
 }
 
-#table td, th{
-	padding: 1em 1em;
-	border-bottom: 1px solid #a1a1a1;
+#table thead tr th{
+  background-color: #3f48cc;
+  color: #ffffff;
+  text-align: left;
+  padding: 1.3em 1.3em;
 }
-
+#table td{
+  padding: 1em 1em;
+  border-bottom: 1px solid #a1a1a1;
+}
 #table tr{
-	background: #f5f5f5;
+  background: #f5f5f5;
 }
 #table tr:nth-of-type(even){
-	background: #dddddd;
+  background: #dddddd;
 }
 #table tr:last-of-type{
-		border-bottom: 3px solid #a1a1a1;
-	}
-#table thead tr th{
-	background-color: #075487;
-    color: #ffffff;
-    text-align: left;
-    padding: 1.3em 1.3em;
-  
-}
-
-.goBamboo{
-	text-align: center;
-}
-
-.btns {
-  font-family: 'Quicksand', sans-serif;
-  font-size: .9em;
-}
-
-#btns, #menu{
-	text-align: center;
-	margin-bottom: 1em;
-  font-family: 'Quicksand', sans-serif;
+  border-bottom: 3px solid #a1a1a1;
 }
 
 .positive_variation{
-	color: green;
+  color: green;
 }
 .negative_variation{
-	color: red;
+  color: red;
 }
+
+
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -97,7 +104,24 @@ h1 {
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
-  animation-duration: 0.4s
+  animation-duration: 0.4s;
+  border-radius: 30px 30px 20px 20px;
+}
+/* Modal Header */
+.modal-header {
+  padding: 1em;
+  background-color: #0a84b4;
+  color: white;
+  border-radius: 20px 20px 0px 0px;
+}
+.modal-header div{
+  display: inline-block;
+  font-weight: bold;
+  font-size: 2em;
+  margin-right: 0.2em;
+}
+.modal-body {
+  padding: 2px 16px;
 }
 
 /* Add Animation */
@@ -115,10 +139,9 @@ h1 {
 .close {
   color: white;
   float: right;
-  font-size: 28px;
+  font-size: 36px;
   font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
   color: #000;
@@ -126,21 +149,4 @@ h1 {
   cursor: pointer;
 }
 
-.modal-header {
-  padding: 1em;
-  background-color: #388E8E;
-  color: white;
-}
-.modal-header div{
-	display: inline-block;
-	font-weight: bold;
-	font-size: 2em;
-	margin-right: 0.2em;
-}
-.modal-body {padding: 2px 16px;}
 
-.modal-footer {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-}
