@@ -78,13 +78,13 @@ function addMemberRow(member){
 	})
 	.then(function(value) {
 		
-		elos = [value.standard_elo, value.rapid_elo, value.blitz_elo];
+		elos = [value.standard_elo, value.rapid_elo];
 		
 		if (value.history.length > 1){
-			variations = [elos[0] - value.history[1].standard, elos[1] - value.history[1].rapid, elos[2] - value.history[1].blitz];
+			variations = [elos[0] - value.history[1].standard, elos[1] - value.history[1].rapid];
 		}
 		else{
-			variations = [0,0,0];
+			variations = [0,0];
 		}
 		
 		let row = document.createElement("tr");
@@ -97,6 +97,8 @@ function addMemberRow(member){
 		}
 		row.appendChild(cell);
 		
+		
+
 		for(let i in elos){
 			let cell = document.createElement("td");
 			if (elos[i] != "Notrated"){
