@@ -77,7 +77,9 @@ function addMemberRow(member){
 		}
 	})
 	.then(function(value) {
-		
+		if (!value){
+			return;
+		}
 		elos = [value.standard_elo, value.rapid_elo];
 		
 		if (value.history.length > 1){
