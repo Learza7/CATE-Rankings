@@ -1,7 +1,7 @@
 
 let ProfileModal = document.getElementById("ProfileModal")
 let tbody = document.getElementById("table_body");
-let ProfileCross = document.getElementById("ProfileCross");
+//let ProfileCross = document.getElementById("ProfileCross");
 
 let ProfileName = document.getElementById("ProfileName");
 let age = document.getElementById("age");
@@ -10,9 +10,9 @@ let flag = document.getElementById("flag");
 let totem = document.getElementById("totem");
 let rank = document.getElementById("rank");
 
-ProfileCross.onclick = function() {
+/*ProfileCross.onclick = function() {
 	ProfileModal.style.display = "none";
-}
+}*/
 
 window.onclick = function(event) {
 	if (event.target == ProfileModal) {
@@ -80,18 +80,18 @@ function addMemberRow(member){
 		if (!value){
 			return;
 		}
-		elos = [value.standard_elo, value.rapid_elo];
+		elos = [value.standard_elo, value.rapid_elo, value.blitz_elo];
 		
 		if (value.history.length > 1){
-			variations = [elos[0] - value.history[1].standard, elos[1] - value.history[1].rapid];
+			variations = [elos[0] - value.history[1].standard, elos[1] - value.history[1].rapid, elos[2] - value.history[1].blitz];
 		}
 		else{
-			variations = [0,0];
+			variations = [0,0,0];
 		}
 		
 		let row = document.createElement("tr");
 		let cell = document.createElement("td");
-		
+		cell.setAttribute("title", "Voir le profil");
 		cell.innerHTML = member.name;
 		cell.onclick = function(){
 			editProfile(member,value);
@@ -106,14 +106,15 @@ function addMemberRow(member){
 			if (elos[i] != "Notrated"){
 				cell.innerHTML = elos[i];
 				
-				if(!isNaN(variations[i] && variations[i]!= 0)){
+				if(!isNaN(variations[i]) && variations[i]!= 0){
+					
 					if (variations[i] > 0){
 						cell.innerHTML += ' <i class="positive_variation">(+'+variations[i]+')</i>';
 					}
 					else if (variations[i] < 0){
 						cell.innerHTML += ' <i class="negative_variation">('+variations[i]+')</i>';
 					}
-					
+					cell.setAttribute("title", "Plus de détails");
 					cell.onclick = function(){
 						
 						let str = value.history[0].numeric_date+"";
