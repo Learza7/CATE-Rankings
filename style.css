@@ -148,7 +148,7 @@ button:focus {
 /* Modal Header */
 .modal-header {
   padding: 1em;
-  background-color: #0a84b4;
+  background-color: #518dfd;
   color: white;
   border-radius: 20px 20px 0px 0px;
 }
@@ -193,7 +193,7 @@ button:focus {
     width: 100%;
   }
   #modal-content{
-    max-width: 60vw !important;
+    
     color: red;
     
   }
