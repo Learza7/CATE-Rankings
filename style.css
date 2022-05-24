@@ -205,7 +205,7 @@ button:focus {
     display: none;
   }
   img{
-    max-width: 5rem;
+    max-width: 2rem;
     
     position : absolute;
     top: .2rem;
