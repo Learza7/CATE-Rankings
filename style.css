@@ -3,8 +3,11 @@
 
 img{
   vertical-align: middle;
-  animation: rotation 30s infinite linear;
+  /*animation: rotation 30s infinite linear;*/
   filter: drop-shadow(4px 2px 3px grey);
+  max-width: 5rem;
+  margin: 1rem;
+  
 }
 
 @keyframes rotation {
@@ -79,7 +82,7 @@ button:focus {
 }
 
 #table thead tr th{
-  background-color: #3f48cc;
+  background-color: #3e47cc;
   color: #ffffff;
   text-align: left;
   padding: 1.3em 1.3em;
