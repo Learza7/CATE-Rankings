@@ -3,8 +3,11 @@
 
 img{
   vertical-align: middle;
-  animation: rotation 30s infinite linear;
+  /*animation: rotation 30s infinite linear;*/
   filter: drop-shadow(4px 2px 3px grey);
+  max-width: 5rem;
+  margin: 1rem;
+  
 }
 
 @keyframes rotation {
@@ -79,7 +82,7 @@ button:focus {
 }
 
 #table thead tr th{
-  background-color: #3f48cc;
+  background-color: #3e47cc;
   color: #ffffff;
   text-align: left;
   padding: 1.3em 1.3em;
@@ -148,7 +151,7 @@ button:focus {
 /* Modal Header */
 .modal-header {
   padding: 1em;
-  background-color: #0a84b4;
+  background-color: #518dfd;
   color: white;
   border-radius: 20px 20px 0px 0px;
 }
@@ -187,13 +190,13 @@ button:focus {
   cursor: pointer;
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 640px) {
   
   #table{
     width: 100%;
   }
   #modal-content{
-    max-width: 60vw !important;
+    
     color: red;
     
   }
