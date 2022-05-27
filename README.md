@@ -1,4 +1,4 @@
-This website displays data about the members of CATE chess club such as elo rankings or birthdays.
+This website displays data about the members of CATE (Airbus Toulouse) chess club such as elo rankings or birthdays.
 
 You can access it here : https://learza7.github.io/caterankings/
 
