@@ -3,19 +3,22 @@
 
 img{
   vertical-align: middle;
-  /*animation: rotation 30s infinite linear;*/
+  animation: floating 3s infinite ease-in-out;
   filter: drop-shadow(4px 2px 3px grey);
   max-width: 5rem;
   margin: 1rem;
   
 }
 
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
+@keyframes floating {
+  0% {
+    transform: translateY(0);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateY(-.3rem);
+  }
+  100%{
+    transform: translateY(0);
   }
 }
 
