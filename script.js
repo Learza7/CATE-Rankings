@@ -60,7 +60,7 @@ totems = {
 }
 
 // retrieve the members' data
-fetch("https://api.jsonbin.io/b/621e972a06182767436aa7f3/18")
+fetch("https://api.npoint.io/9a8a6bda604bb0813b9c")
 .then(res => res.json())
 .then(function(data){
 	for (let i in data.members){
